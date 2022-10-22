@@ -2,6 +2,7 @@
 
 .shop-card{
     padding: 10px;
+    position: relative;
 }
 .shop-card img{
     width: 100%;
@@ -10,7 +11,17 @@
 }
 
 .shop-card{
-    height: 508px;
+    height: 540px;
     border: 3px solid teal;
     border-radius: 5px;
+}
+
+.product-bottom{
+    background-color: #FFE0B3;
+    padding: 1px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
