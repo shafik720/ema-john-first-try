@@ -8,8 +8,8 @@ const Products = () => {
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[]);
-    function handleAddToCart(){
-        console.log('clicked');
+    function handleAddToCart(element){
+        console.log(element.name);
     }
     return (
         <div className="product-page">            
