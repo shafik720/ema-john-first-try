@@ -5,8 +5,8 @@ const Shop = (props) => {
     console.log(props);
     const{id, img, name, price, quantity} = props.index;
     return (
-        <div>
-            <h2>Product Name : {name} </h2>
+        <div className="shop-card">
+            <img src={img} alt=""/>
         </div>
     );
 };

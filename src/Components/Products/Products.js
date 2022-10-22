@@ -12,11 +12,14 @@ const Products = () => {
         <div className="product-page">            
             <div className="product-container">
             <h2>Total Product Found : {products.length} </h2>
-            {
+                <div className="product-container2">
+                {
                 products.map(index=><Shop
                     index = {index}
+                    key = {index.id}
                 ></Shop>)
             }
+                </div>
             </div>
 
 
