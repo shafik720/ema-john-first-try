@@ -5,5 +5,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    padding: 15px 40px;
+    padding: 15px 60px;
+}
+
+.header a{
+    text-decoration:  none;
+    color: white;
+    font-size: 18px;
+    margin: 0 20px;
 }
