@@ -9,9 +9,9 @@ const Shop = (props) => {
             <img src={img} alt=""/>
             <div className="product-details">
             <h4>Product Name : {name} </h4>
-            <p>Price : {price} </p>
+            <p className='priceTag'>Price : ${price} </p>
             <p>Seller : {seller} </p>
-            <p>Ratings : {ratings} </p>
+            <p>Ratings : {ratings} star</p>
             </div>
             <div className="product-bottom">
                 <p>Add To Cart</p>

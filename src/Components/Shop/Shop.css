@@ -32,3 +32,9 @@
     background-color: orangered;
     color: white;
 }
+
+.priceTag{
+    font-size: 18px;
+    font-weight: 700;
+    color: crimson;
+}
