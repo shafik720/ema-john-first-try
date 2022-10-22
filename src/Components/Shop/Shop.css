@@ -24,4 +24,11 @@
     left: 0;
     right: 0;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.product-bottom:hover{
+    background-color: orangered;
+    color: white;
 }
