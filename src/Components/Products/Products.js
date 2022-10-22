@@ -8,8 +8,13 @@ const Products = () => {
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[]);
+
+    const [cart,setCart] = useState([]);
+    
     function handleAddToCart(element){
-        console.log(element.name);
+        // cart.push(element);
+        let secondCart = [...cart,element]
+        setCart(secondCart);
     }
     return (
         <div className="product-page">            
@@ -26,7 +31,7 @@ const Products = () => {
                 </div>
             </div>
             <div className="cart-container">
-                <h2>Cart Container</h2>
+                <h2>Product Added : {cart.length}</h2>
             </div>
         </div>
     );
