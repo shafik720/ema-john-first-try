@@ -6,8 +6,6 @@ const Cart = (props) => {
 
     // local  storage
     let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
-    storeId.forEach(index=>console.log(index));
-    // console.log(storeId);
 
     let tax = 0;
     let grandTotal = 0;
@@ -21,6 +19,12 @@ const Cart = (props) => {
 
     tax = parseFloat(total * 0.1);
     grandTotal = tax + shipping + total;
+
+    // clear cart
+    function clearStorage(){
+        localStorage.removeItem('cart');
+        let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
+    }
     
     return (
         <div className="cart-div">
@@ -31,7 +35,7 @@ const Cart = (props) => {
                 <p>Shipping Fee : {shipping} </p>
                 <p>Tax : {tax.toFixed(2)} </p>
                 <h4>Grand Total : $ {grandTotal}</h4>
-                <button className="delete-btn">Clear All</button>
+                <button onClick={clearStorage} className="delete-btn">Clear All</button>
             </div>
         </div>
     );
