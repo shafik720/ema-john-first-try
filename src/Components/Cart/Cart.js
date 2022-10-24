@@ -5,6 +5,7 @@ const Cart = (props) => {
     const {cart} = props;
 
     let tax = 0;
+    let grandTotal = 0;
     let total = 0;
     let shipping = 0;
     for(let element of cart){
@@ -12,7 +13,9 @@ const Cart = (props) => {
         shipping += element.shipping;
     }
 
-    tax = total * 0.1;
+    tax = parseFloat(total * 0.1);
+    grandTotal = tax + shipping + total;
+
     return (
         <div className="cart-div">
             <div className="cart-child-div">
@@ -21,6 +24,7 @@ const Cart = (props) => {
                 <p>Total Price: {total} </p>
                 <p>Shipping Fee : {shipping} </p>
                 <p>Tax : {tax.toFixed(2)} </p>
+                <h4>Grand Total : $ {grandTotal}</h4>
             </div>
         </div>
     );

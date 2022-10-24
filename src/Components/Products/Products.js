@@ -12,14 +12,17 @@ const Products = () => {
 
     const [cart,setCart] = useState([]);
     
+    
+    let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
     function handleAddToCart(element){
         let secondCart = [...cart,element]
         setCart(secondCart);
+    
+        // work on local storage
+        storeId.push(element.id);
+        localStorage.setItem('cart', JSON.stringify(storeId));
     }
-    // work on local storage
-    let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.forEach(index=>storeId.push(index.id));
-    console.log(storeId);
+    
 
     return (
         <div className="product-page">            
