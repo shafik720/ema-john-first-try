@@ -23,7 +23,7 @@ const Cart = (props) => {
     // clear cart
     function clearStorage(){
         localStorage.removeItem('cart');
-        let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
+        window.location.reload();
     }
     
     return (
