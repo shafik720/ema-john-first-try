@@ -14,6 +14,7 @@ const Products = () => {
     
     
     let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
+    
     function handleAddToCart(element){
         let secondCart = [...cart,element]
         setCart(secondCart);
