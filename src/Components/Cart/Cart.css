@@ -12,3 +12,17 @@
     font-weight: 600;
     font-size: 18px;
 }
+
+.delete-btn{
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    background-color: teal;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 30px;
+    cursor: pointer;
+}
