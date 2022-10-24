@@ -17,15 +17,16 @@
 }
 
 .product-bottom{
-    background-color: #FFE0B3;
+    background-color: teal;
     padding: 1px 0;
+    color: white;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.1s;
 }
 
 .product-bottom:hover{
