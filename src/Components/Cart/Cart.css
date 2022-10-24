@@ -1,0 +1,14 @@
+
+
+.cart-div{
+    position: sticky;
+    top: 20%;
+}
+.cart-child-div{
+    margin-top: 200px;
+    margin-left: 30px;
+}
+.cart-child-div p{
+    font-weight: 600;
+    font-size: 18px;
+}
