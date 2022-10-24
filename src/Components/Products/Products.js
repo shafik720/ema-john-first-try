@@ -16,6 +16,11 @@ const Products = () => {
         let secondCart = [...cart,element]
         setCart(secondCart);
     }
+    // work on local storage
+    let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.forEach(index=>storeId.push(index.id));
+    console.log(storeId);
+
     return (
         <div className="product-page">            
             <div className="product-container">
