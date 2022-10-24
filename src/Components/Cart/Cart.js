@@ -16,6 +16,11 @@ const Cart = (props) => {
     tax = parseFloat(total * 0.1);
     grandTotal = tax + shipping + total;
 
+
+    // local  storage
+    let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
+    storeId.forEach(index=>console.log(index));
+    // console.log(storeId);
     return (
         <div className="cart-div">
             <div className="cart-child-div">

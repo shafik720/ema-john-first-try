@@ -19,10 +19,9 @@ const Products = () => {
         setCart(secondCart);
     
         // work on local storage
-        storeId.push(element.id);
+        storeId.push(element);
         localStorage.setItem('cart', JSON.stringify(storeId));
     }
-    
 
     return (
         <div className="product-page">            
