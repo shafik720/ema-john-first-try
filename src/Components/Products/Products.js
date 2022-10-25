@@ -10,8 +10,7 @@ const Products = () => {
         .then(data=>setProducts(data))
     },[]);
 
-    const [cart,setCart] = useState([]);
-    
+    const [cart,setCart] = useState([]);   
     
     let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
     
