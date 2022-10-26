@@ -13,25 +13,41 @@ const Products = () => {
         .then(data=>setProducts(data))
     },[]);
 
-    // getting value from local storage
-    useEffect(()=>{
-        let storedCart = getStoredCart();
-        for(let id in storedCart){
-            let addedProduct = products.find(product=>product.id === id);
-            console.log(addedProduct);
-        }
-    },[products])
+    
 
     // getting product from BUTTON CLICKING from product page
     const [cart,setCart] = useState([]);      
     function handleAddToCart(element){
-        let secondCart = [...cart,element]
-        
+        let secondCart = [];
 
+        let exist = cart.find(product=>product.id === element.id);
+        if(!exist){
+            element.quantity = 1;
+            secondCart = [...cart, element];
+        }else {
+            exist.quantity = exist.quantity + 1;
+            let rest = cart.filter(product=> product.id !== exist.id);
+            secondCart = [...rest, exist];
+        }
         setCart(secondCart);    
         //--------- work on local storage
         addToDb(element.id);
         }
+
+        // getting value from local storage
+        useEffect(()=>{
+            let storedCart = getStoredCart();
+            let freshCart = [];
+            for(let id in storedCart){
+                let addedProduct = products.find(product=>product.id === id);            
+                if(addedProduct){
+                    let quantity = storedCart[id];
+                    addedProduct.quantity = quantity;
+                    freshCart.push(addedProduct);
+                }
+            }
+            setCart(freshCart);
+        },[products])
 
     return (
         <div className="product-page">            
