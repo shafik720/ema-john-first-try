@@ -17,9 +17,10 @@ const Products = () => {
     useEffect(()=>{
         let storedCart = getStoredCart();
         for(let id in storedCart){
+            let addedProduct = products.find(product=>product.id === id);
             
         }
-    },[])
+    },[products])
 
     // getting product from BUTTON CLICKING from product page
     const [cart,setCart] = useState([]);       
