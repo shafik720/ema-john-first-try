@@ -18,7 +18,7 @@ const Products = () => {
         let storedCart = getStoredCart();
         for(let id in storedCart){
             let addedProduct = products.find(product=>product.id === id);
-            
+            console.log(addedProduct);
         }
     },[products])
 
@@ -26,8 +26,9 @@ const Products = () => {
     const [cart,setCart] = useState([]);      
     function handleAddToCart(element){
         let secondCart = [...cart,element]
-        setCart(secondCart);
-    
+        
+
+        setCart(secondCart);    
         //--------- work on local storage
         addToDb(element.id);
         }
