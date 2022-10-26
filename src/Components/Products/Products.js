@@ -23,8 +23,7 @@ const Products = () => {
     },[products])
 
     // getting product from BUTTON CLICKING from product page
-    const [cart,setCart] = useState([]);       
-    
+    const [cart,setCart] = useState([]);      
     function handleAddToCart(element){
         let secondCart = [...cart,element]
         setCart(secondCart);
