@@ -23,7 +23,7 @@ const Products = () => {
     
         //--------- work on local storage
         addToDb(element.id);
-    }
+        }
 
     return (
         <div className="product-page">            
