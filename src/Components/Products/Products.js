@@ -3,6 +3,7 @@ import Cart from '../Cart/Cart';
 import Shop from '../Shop/Shop';
 import './Products.css'
 const Products = () => {
+    
     const [products, setProducts] = useState([]);
     useEffect(()=>{
         fetch('products.json')
