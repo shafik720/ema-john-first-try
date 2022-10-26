@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb } from '../../utilities/fakedb';
+import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Shop from '../Shop/Shop';
 import './Products.css'
@@ -13,6 +13,13 @@ const Products = () => {
         .then(data=>setProducts(data))
     },[]);
 
+    // getting value from local storage
+    useEffect(()=>{
+        let storedCart = getStoredCart();
+        for(let id in storedCart){
+            
+        }
+    },[])
 
     // getting product from BUTTON CLICKING from product page
     const [cart,setCart] = useState([]);       
