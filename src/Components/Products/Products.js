@@ -3,7 +3,8 @@ import Cart from '../Cart/Cart';
 import Shop from '../Shop/Shop';
 import './Products.css'
 const Products = () => {
-    
+
+    // sending products to shopping page
     const [products, setProducts] = useState([]);
     useEffect(()=>{
         fetch('products.json')
@@ -11,8 +12,9 @@ const Products = () => {
         .then(data=>setProducts(data))
     },[]);
 
-    const [cart,setCart] = useState([]);   
-    
+
+    // getting product from BUTTON CLICKING from product page
+    const [cart,setCart] = useState([]);       
     let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
     
     function handleAddToCart(element){
