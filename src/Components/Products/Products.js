@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Shop from '../Shop/Shop';
 import './Products.css'
@@ -15,15 +16,13 @@ const Products = () => {
 
     // getting product from BUTTON CLICKING from product page
     const [cart,setCart] = useState([]);       
-    let storeId = JSON.parse(localStorage.getItem('cart') || '[]');
     
     function handleAddToCart(element){
         let secondCart = [...cart,element]
         setCart(secondCart);
     
-        // work on local storage
-        storeId.push(element);
-        localStorage.setItem('cart', JSON.stringify(storeId));
+        //--------- work on local storage
+        addToDb(element.id);
     }
 
     return (

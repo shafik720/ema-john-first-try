@@ -38,8 +38,14 @@ const deleteShoppingCart = () =>{
     localStorage.removeItem('shopping-cart');
 }
 
+function getStoredCart(){
+    let shoppingCart = JSON.parse(localStorage.getItem('shopping-cart') || '{}');
+    return shoppingCart;
+}
+
 export {
     addToDb, 
+    getStoredCart,
     removeFromDb,
     deleteShoppingCart
 }
